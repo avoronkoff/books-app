@@ -1,0 +1,9 @@
+<cdk-virtual-scroll-viewport [itemSize]="90" (scrolledIndexChange)="onScroll($event)">
+  <ng-container *cdkVirtualFor="let book of books; trackBy: trackByFn">
+    <book-card [book]="book"></book-card>
+  </ng-container>
+
+  <mat-toolbar [color]="'warn'" *ngIf="books && !books.length">
+    <span>Nothing Found</span>
+  </mat-toolbar>
+</cdk-virtual-scroll-viewport>

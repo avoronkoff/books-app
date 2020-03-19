@@ -1,0 +1,15 @@
+<mat-card class="card">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image">
+      <img [src]="book.volumeInfo?.imageLinks?.smallThumbnail" alt="image">
+    </div>
+    <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
+    <mat-card-subtitle>{{book.volumeInfo.subtitle}}</mat-card-subtitle>
+    <img class="favorite" src="/assets/images/favorite.svg" alt="" (click)="setFavorite(book)" />
+  </mat-card-header>
+  <mat-card-content>
+    <p class="description">
+      {{book.volumeInfo.description | truncate:300}}
+    </p>
+  </mat-card-content>
+</mat-card>
